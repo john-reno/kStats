@@ -1,0 +1,36 @@
+{
+  "fitbit": {
+    "appUUID": "82710bb5-7d3a-41fe-bd27-7a294564f508",
+    "appType": "app",
+    "appDisplayName": "kStats",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#4ba46a",
+    "requestedPermissions": [
+      "access_internet",
+      "access_activity",
+      "access_heart_rate",
+      "access_location",
+      "run_background",
+      "access_user_profile"
+    ],
+    "buildTargets": [
+      "meson",
+      "gemini",
+      "mira",
+      "higgs"
+    ],
+    "i18n": {
+      "en": {
+        "name": "kStats"
+      }
+    },
+    "defaultLanguage": "en-US"
+  },
+  "devDependencies": {
+    "@fitbit/sdk": "4.2.0",
+    "@fitbit/sdk-cli": "^1.7.0"
+  },
+  "scripts": {
+    "build": "fitbit-build"
+  }
+}

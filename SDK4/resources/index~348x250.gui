@@ -1,0 +1,74 @@
+<svg viewport-fill="black">
+
+  <text id="salesChange" fill="lime" x="35" y="97">
+    <animate attributeName="y" begin="enable" from="117" to="97" dur="1" final="keep" />
+    <animate attributeName="y" begin="disable" from="97" to="117" dur="0" final="keep" />
+  </text>
+
+  <!-- element below is used to create the salesChange animation above, so it looks like it's appearing from behind a screen -->
+  <rect id="salesChangeBlocker" fill="black" width="100%" height="20" x="0" y="98" />
+
+  <text id="todaySalesIcon" x="5" y="96" display="none">☺️</text>
+  <text id="todayRankSalesAverageIcon" display="none" x="5" y="123">🏆</text>
+  <text id="thisMonthSalesIcon" x="5" y="148" display="none">🗓️</text>
+
+  <text id="yesterdaySales" x="100%-5" y="97"/>
+  <text id="yesterdayRankSalesAverage" x="100%-5" y="123"/>
+  <text id="lastMonthSales" x="100%-5" y="150"/>
+
+  <g id="todaySalesSpinner" transform="translate(15,90)" opacity="0">
+    <animate attributeName="opacity" begin="enable" from="0" to="1" dur="1" repeatDur="1" repeatCount="1" />
+    <animateTransform attributeType="rotate" from="0" to="360" begin="enable" end="disable" dur="1" repeatCount="indefinite"/>
+    <arc width="14" height="14" x="-7" y="-7" fill="lime" arc-width="2" start-angle="0" sweep-angle="260" />
+  </g>
+
+  <g id="todayRankSalesAverageSpinner" transform="translate(15,116)" opacity="0">
+    <animate attributeName="opacity" begin="enable" from="0" to="1" dur="1" repeatDur="1" repeatCount="1" />
+    <animateTransform attributeType="rotate" from="0" to="360" begin="enable" end="disable" dur="1" repeatCount="indefinite"/>
+    <arc width="14" height="14" x="-7" y="-7" fill="lime" arc-width="2" start-angle="0" sweep-angle="260" />
+  </g>
+
+  <g id="thisMonthSalesSpinner" transform="translate(15,142)" opacity="0">
+    <animate attributeName="opacity" begin="enable" from="0" to="1" dur="1" repeatDur="1" repeatCount="1" />
+    <animateTransform attributeType="rotate" from="0" to="360" begin="enable" end="disable" dur="1" repeatCount="indefinite"/>
+    <arc width="14" height="14" x="-7" y="-7" fill="lime" arc-width="2" start-angle="0" sweep-angle="260" />
+  </g>
+
+  <text id="todaySales" x="35" y="97"/>
+  <text id="todayRankSalesAverage" x="35" y="123"/>
+  <text id="thisMonthSales" x="35" y="150"/>
+
+  <text id="timeLabel" x="5" y="58" fill="#ffffff" font-size="75" text-anchor="start" pointer-events="none" opacity="1" />
+  <text id="dateLabel" x="100%-5" y="60" text-anchor="end" pointer-events="none" />
+  <text id="hrmlbl" x="5" y="90" text-anchor="start" pointer-events="none" />
+  <text id="hrmlbl2" x="100%-5" y="90" text-anchor="end" pointer-events="none" />
+  <text id="batteryLabel" x="100%-5" y="20" text-anchor="end" pointer-events="none" />
+  <text id="hrLabel" x="100%-5" y="40" text-anchor="end" pointer-events="none" />
+
+  <g id="productSpinner" transform="translate(15,177)" opacity="0">
+    <animate attributeName="opacity" begin="enable" from="0" to="1" dur="1" repeatDur="1" repeatCount="1" />
+    <animateTransform attributeType="rotate" from="0" to="360" begin="enable" end="disable" dur="1" repeatCount="indefinite"/>
+    <arc width="14" height="14" x="-7" y="-7" fill="lime" arc-width="2" start-angle="0" sweep-angle="260" />
+  </g>
+
+  <textarea id="product" x="5" y="167" width="333" height="200" rows="3" text-overflow="ellipsis"/>
+
+  <text id="smallClock" x="5" y="244" display="none">🕓</text>
+  <text id="lastSaleLastRefresh" x="30" y="245"></text>
+
+  <g id="smallClockSpinner" transform="translate(15,240)" opacity="0">
+    <animate attributeName="opacity" begin="enable" from="0" to="1" dur="1" repeatDur="1" repeatCount="1" />
+    <animateTransform attributeType="rotate" from="0" to="360" begin="enable" end="disable" dur="1" repeatCount="indefinite"/>
+    <arc width="14" height="14" x="-7" y="-7" fill="lime" arc-width="2" start-angle="0" sweep-angle="260" />
+  </g>
+
+  <text id="grandtotal" x="100%-5" y="245"></text>
+  <text id="tog" x="50%" y="248">•</text>
+
+  <rect x="5" y="70" fill="white" width="100%-10" height="1" opacity="0.3" />
+  <rect x="5" y="162" fill="white" width="100%-10" height="1" opacity="0.3" />
+  <rect x="5" y="228" fill="white" width="100%-10" height="1" opacity="0.3" />
+
+  <rect id="clicky" width="80" height="80" x="50%-40" y="100%-80" opacity="0" fill="lime" pointer-events="visible" system-events="all" />
+
+</svg>

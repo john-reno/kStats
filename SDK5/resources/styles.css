@@ -1,0 +1,140 @@
+text     {
+  font-size: 21;
+  font-family: Colfax-Bold;
+  text-length: 32;
+  fill: white;
+}
+
+#product     {
+  font-size: 16;
+  font-family: Colfax-Regular;
+  text-length: 32;
+  text-anchor: start;
+  fill: white;
+  opacity: 0.8;
+  text-length: 1000
+}
+
+#lastSaleLastRefresh {
+  font-size: 16;
+  font-family: Colfax-Medium;
+  text-length: 32;
+  text-anchor: start;
+  fill: white;
+  opacity: 1;
+  text-length: 1000
+}
+
+#smallClock     {
+  font-size: 16;
+  font-family: Colfax-Medium;
+  text-length: 32;
+  text-anchor: start;
+  fill: white;
+  opacity: 1;
+  text-length: 1000
+}
+
+#grandtotal     {
+  font-size: 16;
+  font-family: Colfax-Medium;
+  text-length: 32;
+  text-anchor: end;
+  fill: white;
+  opacity: 0.7;
+  text-length: 1000
+}
+
+
+#tog     {
+  font-size: 26;
+  font-family: Colfax-Medium;
+  text-length: 32;
+  text-anchor: middle;
+  fill: red;
+  opacity: 0.7;
+  text-length: 1000
+}
+
+
+
+#yesterdaySales     {
+  font-size: 21;
+  font-family: Colfax-Regular;
+  text-length: 32;
+  text-anchor: end;
+  fill: white;
+  opacity: 0.7
+}
+
+#lastMonthSales     {
+  font-size: 21;
+  font-family: Colfax-Regular;
+  text-length: 32;
+  text-anchor: end;
+  fill: white;
+  opacity: 0.7
+}
+
+#yesterdayRankSalesAverage     {
+  font-size: 21;
+  font-family: Colfax-Regular;
+  text-length: 32;
+  text-anchor: end;
+  fill: white;
+  opacity: 0.7
+}
+
+#hrmlbl2     {
+  font-size: 14;
+  font-family: Colfax-Regular;
+  text-length: 50;
+  text-anchor: end;
+  fill: white;
+  opacity: 0.7
+}
+
+
+
+#timeLabel {
+  font-family: Colfax-Regular;
+  font-weight: regular;
+  text-length: 10;
+  letter-spacing: -7
+}
+
+#dateLabel     {
+  font-size: 20;
+  font-family: Colfax-Medium;
+  font-weight: regular;
+  fill: white;
+  text-length: 20;
+  letter-spacing: -1;
+}
+
+#hrmlbl     {
+  font-size: 14;
+  font-family: Colfax-Medium;
+  font-weight: regular;
+  fill: white;
+  text-length: 50
+}
+
+#batteryLabel     {
+  font-size: 20;
+  font-family: Colfax-Medium;
+  font-weight: regular;
+  fill: white;
+  text-length: 20;
+  letter-spacing: -1
+}
+
+
+#hrLabel     {
+  font-size: 20;
+  font-family: Colfax-Medium;
+  font-weight: regular;
+  fill: white;
+  text-length: 20;
+  letter-spacing: -1;
+}

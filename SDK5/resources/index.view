@@ -1,0 +1,75 @@
+<svg viewport-fill="black">
+<g transform="translate(18,18)">
+
+  <text id="salesChange" fill="lime" x="35" y="116">
+    <animate attributeName="y" begin="enable" from="136" to="116" dur="1" final="keep" />
+    <animate attributeName="y" begin="disable" from="116" to="136" dur="0" final="keep" />
+  </text>
+
+  <!-- element below is used to create the salesChange animation above, so it looks like it's appearing from behind a screen -->
+  <rect id="salesChangeBlocker" fill="black" width="100%" height="20" x="0" y="116" />
+
+  <text id="todaySalesIcon" x="10" y="115" display="none">☺️</text>
+  <text id="todayRankSalesAverageIcon" x="10" y="146" display="none">🏆</text>
+  <text id="thisMonthSalesIcon" x="10" y="174" display="none">🗓️</text>
+
+  <text id="yesterdaySales" x="300-10" y="116"/>
+  <text id="yesterdayRankSalesAverage" x="300-10" y="146"/>
+  <text id="lastMonthSales" x="300-10" y="176"/>
+
+  <g id="todaySalesSpinner" transform="translate(20,109)" opacity="0">
+    <animate attributeName="opacity" begin="enable" from="0" to="1" dur="1" repeatDur="1" repeatCount="1" />
+    <animateTransform attributeType="rotate" from="0" to="360" begin="enable" end="disable" dur="1" repeatCount="indefinite"/>
+    <arc width="14" height="14" x="-7" y="-7" fill="lime" arc-width="2" start-angle="0" sweep-angle="260" />
+  </g>
+
+  <g id="todayRankSalesAverageSpinner" transform="translate(20,139)" opacity="0">
+    <animate attributeName="opacity" begin="enable" from="0" to="1" dur="1" repeatDur="1" repeatCount="1" />
+    <animateTransform attributeType="rotate" from="0" to="360" begin="enable" end="disable" dur="1" repeatCount="indefinite"/>
+    <arc width="14" height="14" x="-7" y="-7" fill="lime" arc-width="2" start-angle="0" sweep-angle="260" />
+  </g>
+
+  <g id="thisMonthSalesSpinner" transform="translate(20,169)" opacity="0">
+    <animate attributeName="opacity" begin="enable" from="0" to="1" dur="1" repeatDur="1" repeatCount="1" />
+    <animateTransform attributeType="rotate" from="0" to="360" begin="enable" end="disable" dur="1" repeatCount="indefinite"/>
+    <arc width="14" height="14" x="-7" y="-7" fill="lime" arc-width="2" start-angle="0" sweep-angle="260" />
+  </g>
+
+  <text id="todaySales" x="40" y="116"/>
+  <text id="todayRankSalesAverage" x="40" y="146"/>
+  <text id="thisMonthSales" x="40" y="176"/>
+
+  <text id="timeLabel" x="10" y="68" fill="#ffffff" font-size="85" text-anchor="start" pointer-events="none" opacity="1" />
+  <text id="dateLabel" x="300-10" y="70" text-anchor="end" pointer-events="none" />
+  <text id="hrmlbl" x="10" y="90" text-anchor="start" pointer-events="none" />
+  <text id="hrmlbl2" x="300-10" y="90" text-anchor="end" pointer-events="none" />
+  <text id="batteryLabel" x="300-10" y="20" text-anchor="end" pointer-events="none" />
+  <text id="hrLabel" x="300-10" y="45" text-anchor="end" pointer-events="none" />
+
+  <g id="productSpinner" transform="translate(20,210)" opacity="0">
+    <animate attributeName="opacity" begin="enable" from="0" to="1" dur="1" repeatDur="1" repeatCount="1" />
+    <animateTransform attributeType="rotate" from="0" to="360" begin="enable" end="disable" dur="1" repeatCount="indefinite"/>
+    <arc width="14" height="14" x="-7" y="-7" fill="lime" arc-width="2" start-angle="0" sweep-angle="260" />
+  </g>
+
+  <textarea id="product" x="10" y="200" width="285" height="200" rows="3" text-overflow="ellipsis"/>
+
+  <text id="smallClock" x="10" y="289" display="none">🕓</text>
+  <text id="lastSaleLastRefresh" x="33" y="290"></text>
+
+  <g id="smallClockSpinner" transform="translate(20,285)" opacity="0">
+    <animate attributeName="opacity" begin="enable" from="0" to="1" dur="1" repeatDur="1" repeatCount="1" />
+    <animateTransform attributeType="rotate" from="0" to="360" begin="enable" end="disable" dur="1" repeatCount="indefinite"/>
+    <arc width="14" height="14" x="-7" y="-7" fill="lime" arc-width="2" start-angle="0" sweep-angle="260" />
+  </g>
+
+  <text id="grandtotal" x="300-10" y="290"></text>
+  <text id="tog" x="50%-18" y="294">•</text>
+
+  <rect x="10" y="85" fill="white" width="300-15" height="1" opacity="0.3" />
+  <rect x="10" y="191" fill="white" width="300-15" height="1" opacity="0.3" />
+  <rect x="10" y="267" fill="white" width="300-15" height="1" opacity="0.3" />
+</g>
+
+  <rect id="clicky" width="80" height="80" x="50%-40" y="100%-80" opacity="0" fill="lime" pointer-events="visible" system-events="all" />
+</svg>
