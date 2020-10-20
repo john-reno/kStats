@@ -1,11 +1,11 @@
-text     {
+text {
   font-size: 21;
   font-family: Colfax-Bold;
   text-length: 32;
   fill: white;
 }
 
-#product     {
+#product {
   font-size: 16;
   font-family: Colfax-Regular;
   text-length: 32;
@@ -25,7 +25,7 @@ text     {
   text-length: 1000
 }
 
-#smallClock     {
+#smallClock {
   font-size: 16;
   font-family: Colfax-Medium;
   text-length: 32;
@@ -35,7 +35,7 @@ text     {
   text-length: 1000
 }
 
-#grandtotal     {
+#grandtotal {
   font-size: 16;
   font-family: Colfax-Medium;
   text-length: 32;
@@ -45,8 +45,7 @@ text     {
   text-length: 1000
 }
 
-
-#tog     {
+#tog {
   font-size: 26;
   font-family: Colfax-Medium;
   text-length: 32;
@@ -56,9 +55,7 @@ text     {
   text-length: 1000
 }
 
-
-
-#yesterdaySales     {
+#yesterdaySales {
   font-size: 21;
   font-family: Colfax-Regular;
   text-length: 32;
@@ -67,7 +64,7 @@ text     {
   opacity: 0.7
 }
 
-#lastMonthSales     {
+#lastMonthSales {
   font-size: 21;
   font-family: Colfax-Regular;
   text-length: 32;
@@ -76,7 +73,7 @@ text     {
   opacity: 0.7
 }
 
-#yesterdayRankSalesAverage     {
+#yesterdayRankSalesAverage {
   font-size: 21;
   font-family: Colfax-Regular;
   text-length: 32;
@@ -85,7 +82,7 @@ text     {
   opacity: 0.7
 }
 
-#hrmlbl2     {
+#hrmlbl2 {
   font-size: 14;
   font-family: Colfax-Regular;
   text-length: 50;
@@ -94,8 +91,6 @@ text     {
   opacity: 0.7
 }
 
-
-
 #timeLabel {
   font-family: Colfax-Regular;
   font-weight: regular;
@@ -103,7 +98,7 @@ text     {
   letter-spacing: -7
 }
 
-#dateLabel     {
+#dateLabel {
   font-size: 20;
   font-family: Colfax-Medium;
   font-weight: regular;
@@ -112,7 +107,7 @@ text     {
   letter-spacing: -1;
 }
 
-#hrmlbl     {
+#hrmlbl {
   font-size: 14;
   font-family: Colfax-Medium;
   font-weight: regular;
@@ -120,7 +115,7 @@ text     {
   text-length: 50
 }
 
-#batteryLabel     {
+#batteryLabel {
   font-size: 20;
   font-family: Colfax-Medium;
   font-weight: regular;
@@ -129,8 +124,7 @@ text     {
   letter-spacing: -1
 }
 
-
-#hrLabel     {
+#hrLabel {
   font-size: 20;
   font-family: Colfax-Medium;
   font-weight: regular;

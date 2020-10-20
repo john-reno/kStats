@@ -100,70 +100,73 @@ let showSalesData = function(type, data) {
 
   if (type == TODAY) {
     receivedData = data[TODAY];
-    todayRankSalesAverage.text = receivedData.rank + " · " + receivedData.purchases + " · " + ((receivedData.amount / receivedData.purchases || 0).toFixed(1));
-    todaySalesIcon.style.display = "inline";
-    todaySalesSpinner.style.display = "none";
-    todayRankSalesAverageIcon.style.display = "inline";
-    todayRankSalesAverageSpinner.style.display = "none";
-    todaySalesSpinner.animate("disable");
-    todayRankSalesAverageSpinner.animate("disable");
+      if (receivedData.rank !== undefined){ // only fetch data if API key is valid
+        todayRankSalesAverage.text = receivedData.rank + " · " + receivedData.purchases + " · " + ((receivedData.amount / receivedData.purchases || 0).toFixed(1));
+        todaySalesIcon.style.display = "inline";
+        todaySalesSpinner.style.display = "none";
+        todayRankSalesAverageIcon.style.display = "inline";
+        todayRankSalesAverageSpinner.style.display = "none";
+        todaySalesSpinner.animate("disable");
+        todayRankSalesAverageSpinner.animate("disable");
 
-    // find any sales increases and round them to two decimals
+        // find any sales increases and round them to two decimals
 
-    let roundedValue = Math.round(receivedData.amount - oldValue);
-    let roundedValueAccurate = formatNumber((Math.round((receivedData.amount - oldValue) * 100) / 100));
+        let roundedValue = Math.round(receivedData.amount - oldValue);
+        let roundedValueAccurate = formatNumber((Math.round((receivedData.amount - oldValue) * 100) / 100));
 
-    salesChange.text = ""; // remove previous increase if no further increase
-    oldValue = receivedData.amount || 0;
-    todaySales.text = formatNumber(receivedData.amount) || 0;
+        salesChange.text = ""; // remove previous increase if no further increase
+        oldValue = receivedData.amount || 0;
+        todaySales.text = formatNumber(receivedData.amount) || 0;
 
-    // display sales increases with appropriate vibration level if vibrations are enabled
+        // display sales increases with appropriate vibration level if vibrations are enabled
 
-    if (roundedValue === 1 && roundedValue != Math.round(receivedData.amount)) {
-      salesChange.text = "+" + roundedValueAccurate;
-      if (prefs.getItem("vibToggle") === 1) {
-        vibration.start('confirmation');
-      }
+        if (roundedValue != Math.round(receivedData.amount) && roundedValue >= 1) {
+          salesChange.text = "+" + roundedValueAccurate;
+          if (prefs.getItem("vibToggle") === 1) {
+            const vibrationMap = {
+              1: 'confirmation',
+              2: 'confirmation-max',
+              3: 'nudge-max',
+              4: 'celebration-short',
+              5: 'celebration-long',
+            }
+            if (roundedValue > 5) {roundedValue = 5};
+            vibration.start(vibrationMap[roundedValue]);
+          }
+        }
+
+        // check to see if sales have changed since last app restart
+
+        if (prefs.getItem("salesSave") < receivedData.amount && prefs.getItem("salesSave") != 0 && hasChecked === 0 && prefs.getItem("dateSave") === currentDate) {
+          salesChange.text = "+" + formatNumber(Math.round((receivedData.amount - prefs.getItem("salesSave")) * 100) / 100);
+          hasChecked = 1;
+        }
+
+        salesChange.x = todaySales.x + todaySales.getBBox().width + 7; // calculate x position based on todaySales position and length and add some padding
+        salesChange.animate("disable"); // hide salesChange before animation
+        salesChange.animate("enable"); // animate salesChange into position
+
+        // continue fetching next API data
+
+        kpayMerchantApi.fetchSummary();
+    } else { // display error if invalid API key
+      errorTimer = 99;
+      productsSold.text = "❌ Invalid API key. Please check your API key in settings and remove any extra characters or spaces.";
+
+      productSpinner.style.display = "none";
+      todaySalesSpinner.style.display = "none";
+      todayRankSalesAverageSpinner.style.display = "none";
+      thisMonthSalesSpinner.style.display = "none";
+      smallClockSpinner.style.display = "none";
+
+      productSpinner.animate("disable");
+      todaySalesSpinner.animate("disable");
+      todayRankSalesAverageSpinner.animate("disable");
+      thisMonthSalesSpinner.animate("disable");
+      smallClockSpinner.animate("disable");
+
+      clearInterval(errorCountdown); // stop countdown
     }
-    if (roundedValue === 2 && roundedValue != Math.round(receivedData.amount)) {
-      salesChange.text = "+" + roundedValueAccurate;
-      if (prefs.getItem("vibToggle") === 1) {
-        vibration.start('confirmation-max');
-      }
-    }
-    if (roundedValue === 3 && roundedValue != Math.round(receivedData.amount)) {
-      salesChange.text = "+" + roundedValueAccurate;
-      if (prefs.getItem("vibToggle") === 1) {
-        vibration.start('nudge-max');
-      }
-    }
-    if (roundedValue === 4 && roundedValue != Math.round(receivedData.amount)) {
-      salesChange.text = "+" + roundedValueAccurate;
-      if (prefs.getItem("vibToggle") === 1) {
-        vibration.start('celebration-short');
-      }
-    }
-    if (roundedValue >= 5 && roundedValue != Math.round(receivedData.amount)) {
-      salesChange.text = "+" + roundedValueAccurate;
-      if (prefs.getItem("vibToggle") === 1) {
-        vibration.start('celebration-long');
-      }
-    }
-
-    // check to see if sales have changed since last app restart
-
-    if (prefs.getItem("salesSave") < receivedData.amount && prefs.getItem("salesSave") != 0 && hasChecked === 0 && prefs.getItem("dateSave") === currentDate) {
-      salesChange.text = "+" + Math.round((receivedData.amount - prefs.getItem("salesSave")) * 100) / 100;
-      hasChecked = 1;
-    }
-
-    salesChange.x = todaySales.x + todaySales.getBBox().width + 7; // calculate x position based on todaySales position and length and add some padding
-    salesChange.animate("disable"); // hide salesChange before animation
-    salesChange.animate("enable"); // animate salesChange into position
-
-    // continue fetching next API data
-
-    kpayMerchantApi.fetchSummary();
   }
 
   if (type == SUMMARY) {
@@ -263,7 +266,6 @@ let showSalesData = function(type, data) {
     // after checking we have at least 7 products sold, we populate the product list and assign a star if they were sold as part of a bundle
 
     let product = [];
-    let finalproducts = [];
 
     for (let i = 0; i < 7; i++) {
       product[i] = "";
@@ -339,7 +341,7 @@ clock.ontick = (evt) => {
 kpayMerchantApi.onsuccess = showSalesData;
 
 let fetchSalesData = function() {
-  if (errorTimer === 0 && oldValue === 999999) {
+  if (oldValue === 999999) {
     productsSold.text = "      " + "Getting sales data..."; // only show initial text on first load
   } if (errorTimer === 99 && oldValue === 999999 && thisMonthSalesSpinner.style.display === "none") {
     productsSold.text = "      " + "Getting sales data..."; // show text after initial incorrect API on launch
@@ -391,7 +393,7 @@ function errorCountdownStart(){
 
   if (errorTimer === 1 && todaySalesIcon.style.display === "none") { // show error message if data isn't downloaded
     errorTimer = 99;
-    productsSold.text = "❌ Can't get sales data.\nPlease sync your watch, restart kStats, and check your API key in settings.";
+    productsSold.text = "❌ Can't get sales data.\nPlease open the Fitbit app, resync your watch and restart kStats.";
 
     productSpinner.style.display = "none";
     todaySalesSpinner.style.display = "none";
@@ -460,7 +462,7 @@ messaging.peerSocket.addEventListener("message", (evt) => {
 });
 
 if (errorTimer === 0 && oldValue === 999999) {
-  productsSold.text = "↩️ Looking for phone connection...\nPlease open the Fitbit app, sync your watch and restart kStats."; // keep showing this if companion never opens until error countdown completes
+  productsSold.text = "↩️ Waiting for Fitbit app connection..."; // keep showing this if companion never opens until error countdown completes
 }
 
 // save values onunload
