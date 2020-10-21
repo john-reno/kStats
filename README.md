@@ -24,4 +24,12 @@ You can install the build here: https://gallery.fitbit.com/details/82710bb5-7d3a
 
 ## Installation
 
-Run in Fitbit Studio or via CLI.
+Run in Fitbit Studio or via CLI. The documentation for the Kiezelpay API can be found here: https://kiezelpay.com/api/merchant/documentation
+
+## Note
+
+Please ensure you take adequate care with your API key. Do not enter your API into anything you do not trust, as your sales data will be viewable by others.
+
+## Finally...
+
+Thank you so much for reading, and let me know if you have any questions or issues. 😊
