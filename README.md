@@ -28,7 +28,7 @@ Run in Fitbit Studio or via CLI. The documentation for the Kiezelpay API can be 
 
 ## Note
 
-Please ensure you take adequate care with your API key. Do not enter your API into anything you do not trust, as your sales data will be viewable by others.
+Please ensure you take adequate care with your API key. Do not enter your API into anything you do not trust, as your sales data may be viewed by others. kStats will not expose your API key, however please take precaution with any other apps or clock faces that ask for your Kiezelpay API key, and ensure you are able to see that your API is not being exposed.
 
 ## Finally...
 
