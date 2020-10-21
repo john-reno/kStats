@@ -6,8 +6,6 @@ An app for Fitbit smartwatches which allows you to view your Kiezelpay sales dat
 
 ## What does each stat mean?
 
-See here:
-
 ![kStats Explainer](https://reno.watch/kStats-explainer.png)
 
 ## How does it work?
