@@ -1,6 +1,6 @@
 # kStats
 
-An app for Fitbit smartwatches which allows you to view your Kiezelpay sales data via your API key. It's a heavily modified version of the [K·pay merchant API module](https://github.com/KiezelPay/fitbit_kpay_merchant_api)
+An app for Fitbit smartwatches which allows you to view your Kiezelpay sales data via your API key. It's a heavily modified version of the [K·pay merchant API module](https://github.com/KiezelPay/fitbit_kpay_merchant_api).
 
 ![kStats hero](https://reno.watch/kStats.jpg)
 
