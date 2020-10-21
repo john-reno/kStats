@@ -1,8 +1,8 @@
 # kStats
 
-![kStats hero](https://reno.watch/kStats.jpg)
-
 An app for Fitbit smartwatches which allows you to view your Kiezelpay sales data via your API key.
+
+![kStats hero](https://reno.watch/kStats.jpg)
 
 ## What does each stat mean?
 
