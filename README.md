@@ -16,14 +16,9 @@ See here:
 
 👉 If it doesn't update after adding the API key, you may need to restart the app.
 
-👉 If sales don't load, please sync your watch, restart the app and check that you have pasted your API key correctly (+ remove any spaces).
-
-👉 See below for what each stat means, or tap here to view: https://reno.watch/kStats-explainer.png
-
 ℹ️ kStats will refresh every 5 minutes. If vibrations are turned on, you will feel specific vibrations depending on how much you've made since the last refresh.
 
 ℹ️ kStats will show how much you've made since you last opened the app. This will only work after a previous value is saved, and if you reopen the app on the same day.  
-
 
 ## Demo
 
