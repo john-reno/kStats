@@ -103,8 +103,7 @@ text {
   font-family: Colfax-Medium;
   font-weight: regular;
   fill: white;
-  text-length: 20;
-  letter-spacing: -1;
+  text-length: 20
 }
 
 #hrmlbl {
@@ -120,8 +119,7 @@ text {
   font-family: Colfax-Medium;
   font-weight: regular;
   fill: white;
-  text-length: 20;
-  letter-spacing: -1
+  text-length: 20
 }
 
 #hrLabel {
@@ -129,6 +127,5 @@ text {
   font-family: Colfax-Medium;
   font-weight: regular;
   fill: white;
-  text-length: 20;
-  letter-spacing: -1;
+  text-length: 20
 }

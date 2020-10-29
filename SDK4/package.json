@@ -27,7 +27,7 @@
     "defaultLanguage": "en-US"
   },
   "devDependencies": {
-    "@fitbit/sdk": "4.2.0",
+    "@fitbit/sdk": "~4.2.0",
     "@fitbit/sdk-cli": "^1.7.0"
   },
   "scripts": {

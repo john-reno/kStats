@@ -86,7 +86,7 @@ if (prefs.getItem("salesSave") === undefined) {
     prefs.setItem("salesSave", 0);
 }
 
-// function to format long numbers numbers and with 2nd zero decimal if applicable
+// function to format long numbers and with 2nd zero decimal if applicable
 
 function formatNumber(inputNumber) {
     let num = inputNumber.toFixed(2).replace(/\d{1,3}(?=(\d{3})+(?!\d))/g, "$&,");
@@ -131,7 +131,7 @@ let showSalesData = function(type, data) {
                         5: 'celebration-long',
                     }
                     if (roundedValue > 5) {
-                        roundedValue = 5
+                        roundedValue = 5;
                     };
                     vibration.start(vibrationMap[roundedValue]);
                 }
@@ -393,7 +393,7 @@ function errorCountdownStart() {
     }
 
     if (errorTimer <= 20 && errorTimer > 0 && errorTimer != 99 && todaySalesIcon.style.display === "none") {
-        errorTimer -= 1; // countdown
+        errorTimer--; // countdown
     }
 
     if (errorTimer === 1 && todaySalesIcon.style.display === "none") { // show error message if data isn't downloaded
