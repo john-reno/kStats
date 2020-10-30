@@ -330,13 +330,23 @@ clock.ontick = (evt) => {
     timeLabel.text = `${hours}:${mins}`;
     batteryLabel.text = Math.floor(battery.chargeLevel) + "%";
     dateLabel.text = month + " " + currentDate;
-
-    if (hrm.heartRate === null) {
-        hrLabel.text = "--" + "  ❤️";
-    } else {
-        hrLabel.text = hrm.heartRate + "  ❤️";
-    }
 }
+
+// HR reading
+
+if (HeartRateSensor) {
+      const hrm = new HeartRateSensor();
+      hrm.addEventListener("reading", () => {
+        hrLabel.text = hrm.heartRate + "  ❤️";
+      });
+      display.addEventListener("change", () => {
+        // Automatically stop the sensor when the screen is off to conserve battery
+        display.on ? hrm.start() : hrm.stop();
+      });
+      hrm.start();
+    } else {
+      hrLabel.text = "--" + "  ❤️"; 
+    }
 
 // display the sales data received from the companion and show refresh icons
 
