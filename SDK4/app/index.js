@@ -440,18 +440,6 @@ function errorCountdownStart() {
 
 setInterval(fetchSalesData, 300000);
 
-// start HR and stop on display off
-
-hrm.start();
-
-display.onchange = function() {
-    if (display.on) {
-        hrm.start();
-    } else {
-        hrm.stop();
-    }
-}
-
 // vibrations toggle
 
 clicky.onclick = function(e) {
