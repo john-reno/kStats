@@ -308,7 +308,7 @@ let showSalesData = function(type, data) {
 
 // onTick stuff
 
-clock.granularity = "seconds";
+clock.granularity = "minutes";
 
 clock.ontick = (evt) => {
     let today = evt.date;
