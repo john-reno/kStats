@@ -344,8 +344,6 @@ if (HeartRateSensor) {
         display.on ? hrm.start() : hrm.stop();
       });
       hrm.start();
-    } else {
-      hrLabel.text = "--" + "  ❤️"; 
     }
 
 // display the sales data received from the companion and show refresh icons
@@ -354,16 +352,16 @@ kpayMerchantApi.onsuccess = showSalesData;
 
 let fetchSalesData = function() {
     if (oldValue === 999999) {
-        productsSold.text = "      " + "Getting sales data..."; // only show initial text on first load
+        productsSold.text = "       " + "Getting sales data..."; // only show initial text on first load
     }
     if (errorTimer === 99 && oldValue === 999999 && thisMonthSalesSpinner.style.display === "none") {
-        productsSold.text = "      " + "Getting sales data..."; // show text after initial incorrect API on launch
+        productsSold.text = "       " + "Getting sales data..."; // show text after initial incorrect API on launch
     }
     if (errorTimer === 99 && oldValue != 999999) {
-        productsSold.text = "      " + "Getting sales data..."; // only show text on retry
+        productsSold.text = "       " + "Getting sales data..."; // only show text on retry
     }
     if (errorTimer != 99 && oldValue != 999999) {
-        productsSold.text = "      " + productsSold.text; // only indent text if it has loaded products before
+        productsSold.text = "       " + productsSold.text; // only indent text if it has loaded products before
     }
     // start error countdowns
     errorTimer = 20; // start 20 second countdown

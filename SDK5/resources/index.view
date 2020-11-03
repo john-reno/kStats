@@ -39,12 +39,10 @@
   <text id="todayRankSalesAverage" x="40" y="146"/>
   <text id="thisMonthSales" x="40" y="176"/>
 
-  <text id="timeLabel" x="10" y="68" fill="#ffffff" font-size="85" text-anchor="start" pointer-events="none" opacity="1" />
-  <text id="dateLabel" x="300-10" y="70" text-anchor="end" pointer-events="none" />
-  <text id="hrmlbl" x="10" y="90" text-anchor="start" pointer-events="none" />
-  <text id="hrmlbl2" x="300-10" y="90" text-anchor="end" pointer-events="none" />
-  <text id="batteryLabel" x="300-10" y="20" text-anchor="end" pointer-events="none" />
-  <text id="hrLabel" x="300-10" y="45" text-anchor="end" pointer-events="none" />
+  <text id="timeLabel" x="10" y="68" fill="#ffffff" font-size="85" text-anchor="start" opacity="1" />
+  <text id="dateLabel" x="300-10" y="70" text-anchor="end" />
+  <text id="batteryLabel" x="300-10" y="20" text-anchor="end" />
+  <text id="hrLabel" x="300-10" y="45" text-anchor="end">--  ❤️</text>
 
   <g id="productSpinner" transform="translate(20,210)" opacity="0">
     <animate attributeName="opacity" begin="enable" from="0" to="1" dur="1" repeatDur="1" repeatCount="1" />
