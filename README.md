@@ -22,6 +22,8 @@ An app for Fitbit smartwatches which allows you to view your Kiezelpay sales dat
 
 You can install the build here: https://gallery.fitbit.com/details/82710bb5-7d3a-41fe-bd27-7a294564f508
 
+If you want to try it without an API key, you can use the Kiezelpay test API key ```0123456789abcdef0123456789abcdef``` - but please note that it will not display any product information (as the history API doesn't exist for the test API key).
+
 ## Installation
 
 Run in Fitbit Studio or via CLI. The documentation for the Kiezelpay API can be found here: https://kiezelpay.com/api/merchant/documentation
